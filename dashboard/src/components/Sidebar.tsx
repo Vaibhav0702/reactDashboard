@@ -18,7 +18,7 @@ export default function Sidebar() {
   return (
 
   <div className="p-3 d-flex flex-column" style={{ width: '250px', minHeight: '100vh' }}>
-    <div className="pb-4 px-4 ">
+    <div className="pb-4 px-4 pt-2">
       <img src={logo} alt="Logo" style={{ width: '100%' }} />
     </div>
     <ul className="list-unstyled pt-4 pb-4 flex-grow-1 d-flex flex-column  ">
