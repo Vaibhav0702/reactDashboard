@@ -1,0 +1,83 @@
+.selectedBar {
+    position: relative;
+}
+
+.selectedBar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 1px;
+    /* Thickness of the gradient border */
+    background: linear-gradient(96.76deg, #7D54F3 0%, #CEBCFF 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+}
+
+.selectedIcon {
+    width: 24px;
+    height: 24px;
+}
+
+.normalIcon {
+    width: 20px;
+    height: 20px;
+}
+
+.thoughPara {
+    font-family: 'Inter';
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    color: #787486;
+}
+
+.thoughtHeading {
+    font-family: 'Inter';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.94px;
+}
+
+.thoughtContainer {
+    border-radius: 20px;
+}
+
+.menuText {
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+.thoughtInput{
+    color: black !important;
+    border: none !important;
+}
+
+.customDiv{
+    width: 66px;
+    height: 66px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: -60px;
+}
+
+
+.customDivs{
+    padding: 10px;
+    border-radius: 100%;
+    background: #fcd64a47;
+    backdrop-filter: blur(34px)
+}
+
+

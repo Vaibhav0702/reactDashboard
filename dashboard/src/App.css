@@ -32,7 +32,77 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
+
+.LayoutBackground {
+  background-color: #EFEDF2;
+}
+
+.TitelFont {
+  font-family: 'Poppins';
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  white-space: nowrap;           
+  overflow: hidden;           
+  text-overflow: ellipsis;
+}
+
+.Icon {
+  width: 24px;
+  height: 24px;
+}
+
+.subTitleFont {
+
+  font-family: 'Poppins';
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  white-space: nowrap;           
+  overflow: hidden;           
+  text-overflow: ellipsis;
+
+}
+
+.dashBoardIcon {
+  width: 40px;
+  height: 40px;
+  max-width: 40px; 
+}
+
+.dashboardSubH {
+  font-family: 'Poppins';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: #4A5157;
+  white-space: nowrap;           
+  overflow: hidden;           
+  text-overflow: ellipsis;
+
+}
+
+.dashboardH {
+  font-family: 'Poppins';
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  white-space: nowrap;           
+  overflow: hidden;           
+  text-overflow: ellipsis;
+}
+
+
+.card {
+  max-width: 100%;  
+  overflow: hidden; 
+  white-space: nowrap;                      
+  text-overflow: ellipsis;
+}
+
