@@ -6,6 +6,7 @@ import Settings from '../pages/Settings';
 import Support from '../pages/Support';
 import Logout from '../pages/Logout';
 import Resource from '../pages/Resource';
+import Patient from '../pages/Patient';
 
 export default function AllRoutes() {
   return (
@@ -19,6 +20,7 @@ export default function AllRoutes() {
                                         <Route path="/support" element={<Support />} />
                                         <Route path="/logout" element={<Logout />} />
                                         <Route path="/resource" element={<Resource />} />
+                                        <Route path="/patient" element={<Patient />} />
                                     </Routes>
                     
             {/* </Router> */}
