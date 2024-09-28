@@ -9,11 +9,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-right-radius: 20px;
-    padding: 1px;
-    /* Thickness of the gradient border */
+    border-bottom-left-radius: 1.25rem;
+    border-bottom-right-radius: 1.25rem; 
+    border-top-right-radius: 1.25rem; 
+    padding: 0.0625rem; /* 1px */
     background: linear-gradient(96.76deg, #7D54F3 0%, #CEBCFF 100%);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -21,63 +20,61 @@
 }
 
 .selectedIcon {
-    width: 24px;
-    height: 24px;
+    width: 1.5rem; 
+    height: 1.5rem;
 }
 
 .normalIcon {
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem; 
 }
 
 .thoughPara {
     font-family: 'Inter';
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 400;
-    line-height: 14.52px;
+    line-height: 0.9075rem; 
     color: #787486;
 }
 
 .thoughtHeading {
     font-family: 'Inter';
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 500;
-    line-height: 16.94px;
+    line-height: 1.059rem; 
 }
 
 .thoughtContainer {
-    border-radius: 20px;
+    border-radius: 1.25rem; 
 }
 
 .menuText {
     font-family: 'Poppins';
-    font-size: 14px;
+    font-size: 0.875rem; 
     font-weight: 400;
-    line-height: 21px;
+    line-height: 1.3125rem; 
+    cursor: pointer;
 }
 
-.thoughtInput{
+.thoughtInput {
     color: black !important;
     border: none !important;
 }
 
-.customDiv{
-    width: 66px;
-    height: 66px;
+.customDiv {
+    width: 4.125rem; 
+    height: 4.125rem;
     border-radius: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: auto;
-    margin-top: -60px;
+    margin-top: -3.75rem; 
 }
 
-
-.customDivs{
-    padding: 10px;
+.customDivs {
+    padding: 0.625rem; 
     border-radius: 100%;
     background: #fcd64a47;
-    backdrop-filter: blur(34px)
+    backdrop-filter: blur(2.125rem); 
 }
-
-

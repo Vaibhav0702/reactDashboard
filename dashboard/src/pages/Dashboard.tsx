@@ -7,8 +7,8 @@ import clock from "../Assets/SVG/clock.svg"
 
 export default function Dashboard() {
   return (
-    <div className='bg-light'>
-      
+    <div className='bg-light px-2'>
+
       <div className="row">
         <div className="col-lg-3 col-md-6 p-1">
           <div className="card m-0 p-1">
@@ -63,6 +63,8 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+
+      
     </div>
   )
 }
