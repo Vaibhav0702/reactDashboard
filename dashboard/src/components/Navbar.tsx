@@ -62,7 +62,7 @@ export default function Navbar() {
 
   return (
 
-    <div className='TitelFont px-4 pt-3 bg-light'>
+    <div className={`TitelFont px-4 ${ activeRoute != 'patient' ? 'pt-3' :'pt-4' } bg-light`}>
       <div className='pb-4 border-bottom d-flex justify-content-between align-items-center flex-wrap'>
         <Link to={`/`} className="row text-decoration-none text-reset">
           <div>{title(activeRoute)}</div>
