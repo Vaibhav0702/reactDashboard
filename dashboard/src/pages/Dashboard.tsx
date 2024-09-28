@@ -4,6 +4,12 @@ import embryoBank from "../Assets/SVG/EmbryoBank.svg"
 
 import addUser from "../Assets/SVG/user-add.svg";
 import clock from "../Assets/SVG/clock.svg"
+import Overview from '../components/charts/Overview';
+
+import Source from '../components/charts/Source';
+import Activity from '../components/charts/Activity';
+import EmbryoGrading from '../components/charts/EmbryoGrading';
+import AgeDistribution from '../components/charts/AgeDistribution';
 
 
 interface DashboardCardData {
@@ -67,7 +73,67 @@ export default function Dashboard() {
         ))}
       </div>
 
-      
+
+
+      {/* <div className="container border">
+    
+        <div className="row">
+           <div className="col-4">
+
+               <div className='col-12 border'>
+                  <Overview />
+               </div>
+               <div className='col-12 border'>
+                  <Activity />
+               </div>
+
+           </div>
+           <div className="col-8">
+
+               <div className="row">
+                  <div className="col-6 border">
+                     <AgeDistribution /> 
+                  </div>
+                  <div className="col-6 border">
+                    <Source />
+                  </div>
+                  <div className="col-12 border">
+                    <EmbryoGrading />
+                  </div>
+               </div>
+
+           </div>
+        </div>
+      </div> */}
+
+      {/* <div className="container border"> */}
+        <div className="row">
+          <div className="col-12 col-md-4 p-0"> {/* Full width on small screens, 4 columns on medium and larger */}
+            <div className="col-12 border p-1"> {/* Added margin for spacing */}
+              <Overview />
+            </div>
+            <div className="col-12 border p-1">
+              <Activity />
+            </div>
+          </div>
+
+          <div className="col-12 col-md-8"> {/* Full width on small screens, 8 columns on medium and larger */}
+            <div className="row">
+              <div className="col-12 col-sm-6 border  p-1"> {/* Full width on small screens, 6 columns on small and larger */}
+                <AgeDistribution />
+              </div>
+              <div className="col-12 col-sm-6 border  p-1"> {/* Full width on small screens, 6 columns on small and larger */}
+                <Source />
+              </div>
+              <div className="col-12 border  p-1">
+                <EmbryoGrading />
+              </div>
+            </div>
+          </div>
+        </div>
+      {/* </div> */}
+
+
     </div>
   )
 }

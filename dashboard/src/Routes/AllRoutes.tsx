@@ -10,8 +10,8 @@ import Patient from '../pages/Patient';
 
 export default function AllRoutes() {
   return (
-    <div>
-            {/* <Router> */}
+    <>
+        
   
                                     <Routes>
                                         <Route path="/" element={<Dashboard />} />
@@ -22,8 +22,7 @@ export default function AllRoutes() {
                                         <Route path="/resource" element={<Resource />} />
                                         <Route path="/patient" element={<Patient />} />
                                     </Routes>
-                    
-            {/* </Router> */}
-    </div>
+        
+    </>
   )
 }

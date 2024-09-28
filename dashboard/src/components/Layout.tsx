@@ -30,11 +30,11 @@ export default function Layout() {
 
                 <div className="d-flex vh-100">              
                     <Sidebar />
-                    <div className="flex-grow-1 bg-light" style={{ overflowY: "auto" }}>
+                    <div className="flex-grow-1 bg-light d-flex flex-column" style={{ overflowY: "auto" }}>
                         <div className='navBarContainer'>
                             <Navbar />
                         </div>
-                        <Container fluid className="py-3 px-4">
+                        <Container fluid className="py-3 px-4 flex-grow-1">
                             { isLoading ? <Loader /> : <AllRoutes/> }
                         </Container>
                     </div>
