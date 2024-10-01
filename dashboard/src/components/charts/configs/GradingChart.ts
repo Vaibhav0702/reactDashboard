@@ -53,7 +53,7 @@ const GradingChart: GradingChart = {
         horizontal: true,
         columnWidth: "30%",
         borderRadius: 10,
-        borderRadiusApplication: "end",
+        // borderRadiusApplication: "end",
         barHeight: "70%",
       },
     },
@@ -69,6 +69,7 @@ const GradingChart: GradingChart = {
       show: false,
       borderColor: "#ccc",
       strokeDashArray: 2,
+      
     },
     xaxis: {
       categories: ["Day 8", "Day 7", "Day 6", "Day 5", "Day 4", "Day 3"],
