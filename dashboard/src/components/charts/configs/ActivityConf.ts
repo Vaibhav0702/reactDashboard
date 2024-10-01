@@ -1,6 +1,6 @@
 import { ApexOptions } from 'apexcharts';
 
-const eChart2: { series: Array<{ name: string; data: number[]; color: string }>; options: ApexOptions } = {
+const activityChart: { series: Array<{ name: string; data: number[]; color: string }>; options: ApexOptions } = {
     series: [
         {
             name: "Sales",
@@ -40,7 +40,7 @@ const eChart2: { series: Array<{ name: string; data: number[]; color: string }>;
             strokeDashArray: 2,
         },
         xaxis: {
-            categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+            categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
             labels: {
                 show: true,
                 style: {
@@ -81,4 +81,4 @@ const eChart2: { series: Array<{ name: string; data: number[]; color: string }>;
     },
 };
 
-export default eChart2;
+export default activityChart;

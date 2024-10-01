@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import ReactApexChart from 'react-apexcharts'
-import eChart2 from './configs/ActivityConf'
 
 import selectedActivity from '../../Assets/SVG/selectedActivity.svg'
 
 import activitySquareArrow from '../../Assets/SVG/arrow-square-down.svg'
 
 import activity from '../../Assets/SVG/activity.svg'
+import activityChart from './configs/ActivityConf'
 
 
 
@@ -53,8 +53,8 @@ export default function Activity() {
       <div id="chart">
         <ReactApexChart
           className="bar-chart"
-          options={eChart2.options}
-          series={eChart2.series}
+          options={activityChart.options}
+          series={activityChart.series}
           height={410}
           type="bar"
         />

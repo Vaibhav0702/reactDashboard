@@ -1,19 +1,21 @@
+
+
 import { ApexOptions } from "apexcharts";
 
-interface ChartData {
+interface AgeChart {
   series: Array<{
     name: string;
     data: number[];
-    color: string;
+    color?: string;
   }>;
   options: ApexOptions;
 }
 
-const AgeChart: ChartData = {
+const AgeChart: AgeChart = {
   series: [
     {
       name: "Sales",
-      data: [450, 200, 100, 220, 500, 100],
+      data: [750, 400, 500, 220],
       color: "#F7F3FF",
     },
   ],
@@ -32,7 +34,7 @@ const AgeChart: ChartData = {
         horizontal: false,
         columnWidth: "30%",
         borderRadius: 10,
-        // borderRadiusApplication: "end", // Applies the radius only at the top
+        borderRadiusApplication: "end",
       },
     },
     dataLabels: {
@@ -49,11 +51,14 @@ const AgeChart: ChartData = {
       strokeDashArray: 2,
     },
     xaxis: {
-      categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+      categories: ["30", "35 - 37", "38 - 40", "41 - 42"],
       labels: {
         show: true,
+        offsetX: 0, // Adjust label position horizontally if needed
+        offsetY: 0, // Adjust label position vertically if needed
+        rotate: 0,  // Control label rotation if needed
         style: {
-          colors: Array(6).fill("#4A5157"),
+          colors: Array(4).fill("#4A5157"), // Apply color to each label
         },
       },
       axisBorder: {
@@ -62,10 +67,15 @@ const AgeChart: ChartData = {
       },
     },
     yaxis: {
+      min: 100,
+      max: 1000,
+      tickAmount: 5,
       labels: {
         show: true,
+        offsetX: 0, // Adjust the position of y-axis labels if needed
+        formatter: (value: number) => `${value}k`,
         style: {
-          colors: Array(6).fill("#4A5157"),
+          colors: Array(5).fill("#4A5157"), // Apply color to each y-axis label
         },
       },
       axisBorder: {
@@ -75,18 +85,10 @@ const AgeChart: ChartData = {
     },
     tooltip: {
       y: {
-        formatter: (val: number) => {
-          return `$ ${val} thousands`;
-        },
+        formatter: (val: number) => `$ ${val} thousands`,
       },
     },
-    states: {
-      hover: {
-        filter: {
-          type: "none", // Disable any hover filter effect
-        },
-      },
-    },
+    
   },
 };
 
