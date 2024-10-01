@@ -1,6 +1,9 @@
 import { Tabs } from 'antd';
 import React from 'react'
 
+import blueActivity from '../../Assets/SVG/blueActivityStatus.svg';
+import greenActivity from '../../Assets/SVG/greenActivityStatus.svg'
+
 
     const items = [
         {
@@ -31,11 +34,17 @@ export default function Overview() {
     <>
     <div className="chart-container">
         <div>
-            <h5  className="header-name">Source</h5>
+            <h5  className="header-name">Overview</h5>
         </div>
 
+        <div className='py-4'>
         <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        </div>
+    
+        <div className='py-4'>
+
+    
+        <div  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div style={{ width: '95%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <div style={{ width: '40%', height: '5px', backgroundColor: '#3768C5', borderRadius: '5px', marginRight: '5px' }}>
                     {/* <span style={{ marginTop: '10px' }}>40%</span> */}
@@ -56,12 +65,12 @@ export default function Overview() {
             </div>
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <div style={{ width: '95%', display: 'grid', justifyContent: 'center', alignItems: 'center' , height:'150px', backgroundColor:'#FAF8FF', marginTop:'2rem' }}>
-            <span className="text-overview" style={{borderLeft:'5px solid #3768C5'}}>intracytoplasmic sperm injectio</span>
-            <span className="text-overview" style={{borderLeft:'5px solid #37C577'}}>In-Vitro Fertilization</span>
-
-
+        </div>
+        
+        <div  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{ width: '95%', display: 'grid', justifyContent: 'center', alignItems: 'center' , height:'150px', backgroundColor:'#FAF8FF', marginTop:'2rem' , borderRadius:'20px' }}>
+            <span  className='overviewText'> <img className='mx-2' src={blueActivity} alt='blueActivity' /> intracytoplasmic sperm injectio</span>
+            <span className='overviewText'>  <img className='mx-2' src={greenActivity} alt='greenActivity' /> In-Vitro Fertilization</span>
             </div>
         </div>
     </div>

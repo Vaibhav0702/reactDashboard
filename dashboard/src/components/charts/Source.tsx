@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
 import { Tabs } from 'antd';
 import SourceChart from './configs/SourceChart';
@@ -11,27 +11,37 @@ import SourceChart from './configs/SourceChart';
 interface TabItem {
   key: string;
   label: string;
+  series : number[]
 }
 
 const items: TabItem[] = [
   {
     key: '1',
     label: 'Egg',
+    series : [65, 20, 30, 35]
   },
   {
     key: '2',
     label: 'Sperm',
+    series : [95, 70, 80, 35]
   },
   {
     key: '3',
     label: 'Both',
+    series : [45, 40, 30, 35]
   },
 ];
 
 export default function Source() {
 
+
+  const [customSeries , setCustomSeries] = useState<number[]>(SourceChart.series)
+
+
   const onChange = (key: string) => {
-    console.log(key);
+    console.log( " >>>>>>>>>" ,   key);
+     const series = items.filter((value : any) => value.key == key);
+     setCustomSeries(series[0].series)
   };
 
   return (
@@ -41,7 +51,12 @@ export default function Source() {
           <h5 className="header-name">Source</h5>
         </div>
 
-        <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
+
+         <div className='pt-3'>
+         <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
+         </div>
+       
+        
         <div className="maindiv">
           <div className="innerdiv">
             <span className="spanmain" style={{ backgroundColor: 'rgb(55, 197, 119)' }}></span>
@@ -62,14 +77,18 @@ export default function Source() {
         </div>
       </div>
 
-      <ReactApexChart
-        className="full-width"
-        options={SourceChart.options}
-        series={SourceChart.series}
-        type="radialBar"
-        height={350}
-        width="100%"
-      />
+
+      <div className='flex-grow-1 d-flex justify-content-center align-items-center'>
+        <ReactApexChart
+          className="full-width"
+          options={SourceChart.options}
+          series={customSeries}
+          type="radialBar"
+          height={350}
+          width="100%"
+        />
+      </div>
+
     </>
   );
 }

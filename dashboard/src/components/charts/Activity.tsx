@@ -35,7 +35,7 @@ export default function Activity() {
           <span className="weektext p-1">Week   <img className='selectedIcon' src={activitySquareArrow} alt="activitySquareArrow" /> </span>
         </div>
       </div>
-      <div className="stackedbtn">
+      <div className="stackedbtn mt-4">
         <button className={`stacked-button  ${ activebtn == 'button1' ? 'activeSpan' : ''}` }   onClick={() => handleButtonClick('button1')} >
           <span className="button-icon p-2">
            <img className='selectedIcon mx-2' src={activebtn === 'button1' ? selectedActivity : activity}  alt="selectedActivity" />
@@ -50,12 +50,12 @@ export default function Activity() {
         </button>
       </div>
 
-      <div id="chart">
+      <div id="chart" className='flex-grow-1'>
         <ReactApexChart
           className="bar-chart"
           options={activityChart.options}
           series={activityChart.series}
-          height={410}
+          height='100%'
           type="bar"
         />
       </div>

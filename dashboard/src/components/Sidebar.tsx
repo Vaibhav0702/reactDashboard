@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../Styles/Sidebar.css'
-import logo from '../Assets/SVG/AINOVA_Logo.svg'; 
-import patientlogo from '../Assets/SVG/patientLogo.svg'; 
+import logo from '../Assets/SVG/AINOVA_Logo.svg';
+import patientlogo from '../Assets/SVG/patientLogo.svg';
 import dashboard from '../Assets/SVG/dashboard.svg'
 
 import Patient from '../Assets/SVG/profile.svg'
@@ -44,13 +44,16 @@ export default function Sidebar() {
 
   return (
 
-    <div className="p-3 d-flex flex-column" style={{ width: '15rem', minHeight: '100vh', overflowY: 'auto', minWidth: '13rem' }}>
-      <div className="pb-4 px-4 pt-2">
-        <img src={ `${activeRoute ===  'patient' ? patientlogo  : logo}`} alt="Logo" style={{ width: '100%' }} />
+    <div className="p-3 d-flex flex-column" style={{ width: '20rem', minHeight: '100vh', overflowY: 'auto', minWidth: '20rem' }}>
+      <div className="d-flex justify-content-center align-items-center p-4">
+        <img src={`${activeRoute === 'patient' ? patientlogo : logo}`} alt="Logo" style={{ width: '100%' }} />
       </div>
       <ul className="list-unstyled pt-4 pb-4 flex-grow-1 d-flex flex-column">
-        {menuItems.map(item => (
-          <li key={item.path} className={`mb-2 px-3 ${activeRoute === item.path ? 'selectedBar subTitleFont p-2' : 'menuText'}`}>
+        {menuItems.map((item, index) => (
+          <li
+            key={item.path}
+            className={`mb-2 p-3 ${activeRoute === item.path ? 'selectedBar subTitleFont' : 'menuText'} ${index === menuItems.length - 1 ? 'mt-auto' : ''}`}
+          >
             <Link to={`/${item.path}`} className="row text-decoration-none text-reset">
               <div className='col-3 d-flex align-items-center'>
                 <img className={activeRoute === item.path ? 'selectedIcon' : 'normalIcon'} src={item.icon} alt={item.label} />
@@ -61,6 +64,7 @@ export default function Sidebar() {
             </Link>
           </li>
         ))}
+
       </ul>
       <div className='thoughtContainer p-4 text-center bg-light mt-auto'>
         <div className='customDiv bg-light mb-2'>

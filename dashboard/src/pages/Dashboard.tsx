@@ -49,9 +49,9 @@ const dashboardData: DashboardCardData[] = [
 
 export default function Dashboard() {
   return (
-    <div className='bg-light px-2'>
+    <div className='bg-light px-2 d-flex flex-column h-100'>
 
-      <div className="row">
+      {/* <div className="row">
         {dashboardData.map((card, index) => (
           <div key={index} className="col-lg-3 col-md-6 p-1">
             <div className="card m-0 p-1">
@@ -71,9 +71,29 @@ export default function Dashboard() {
             </div>
           </div>
         ))}
+      </div> */}
+
+      <div className="row">
+        {dashboardData.map((card, index) => (
+          <div key={index} className="col-lg-3 col-md-6 p-1">
+            <div className="card m-0 p-1">
+              <div className="card-body d-flex gap-4 p-4">
+                <div>
+                  <img
+                    className="dashBoardIcon d-flex align-items-center"
+                    src={card.icon}
+                    alt={card.title}
+                  />
+                </div>
+                <div className="flex-grow-1">
+                  <h5 className="card-title dashboardbH">{card.value}</h5>
+                  <p className="card-text dashboardSubH">{card.title}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-
-
 
       {/* <div className="container border">
     
@@ -106,32 +126,107 @@ export default function Dashboard() {
         </div>
       </div> */}
 
-      {/* <div className="container border"> */}
-        <div className="row">
-          <div className="col-12 col-md-4 p-0"> {/* Full width on small screens, 4 columns on medium and larger */}
-            <div className="col-12 border p-1"> {/* Added margin for spacing */}
+      {/* <div className="row">
+          <div className="col-12 col-md-4 p-0"> 
+            <div className="col-12 border p-3 card">
               <Overview />
             </div>
-            <div className="col-12 border p-1">
+            <div className="col-12 border p-3 card">
               <Activity />
             </div>
           </div>
 
-          <div className="col-12 col-md-8"> {/* Full width on small screens, 8 columns on medium and larger */}
+          <div className="col-12 col-md-8">
             <div className="row">
-              <div className="col-12 col-sm-6 border  p-1"> {/* Full width on small screens, 6 columns on small and larger */}
+              <div className="col-12 col-sm-6 border  p-3 card"> 
                 <AgeDistribution />
               </div>
-              <div className="col-12 col-sm-6 border  p-1"> {/* Full width on small screens, 6 columns on small and larger */}
+              <div className="col-12 col-sm-6 border  p-3 card">
                 <Source />
               </div>
-              <div className="col-12 border  p-1">
+              <div className="col-12 border  p-3 card">
                 <EmbryoGrading />
               </div>
             </div>
           </div>
+        </div> */}
+
+
+
+
+
+
+      {/* <div className="d-flex border flex-grow-1 mt-4 gap-4">
+        <div className="col-12 col-md-4 p-0 d-flex flex-column gap-4">
+          <div className="border p-3 card flex-grow-1">
+            <Overview />
+          </div>
+          <div className="col-12 border p-3 card flex-grow-1">
+            <Activity />
+          </div>
         </div>
-      {/* </div> */}
+
+        <div className="col-12 col-md-8 d-flex flex-column gap-4">
+    
+          <div className="d-flex gap-4 flex-grow-1">
+             <div className="border p-3 card flex-grow-1">
+              <AgeDistribution />
+            </div>
+            <div className="border p-3 card flex-grow-1" >
+              <Source />
+            </div>
+          </div>
+          <div className="d-flex gap-4 border flex-grow-1">
+            <div className="border p-3 card  flex-grow-1">
+              <EmbryoGrading />
+            </div>
+          </div>
+        </div>
+      </div> */}
+
+
+
+      <div className="d-flex flex-grow-1 mt-4 gap-4 flex-wrap">
+        <div className="col-12 col-md-4 p-0 d-flex flex-column gap-4">
+          <div className=" p-3 card ">
+            <Overview />
+          </div>
+          <div className=" p-3 card flex-grow-1">
+            <Activity />
+          </div>
+        </div>
+
+        <div className="col-12 col-md-7 d-flex flex-column gap-4 flex-grow-1">
+          <div className="d-flex gap-4 flex-wrap">
+            <div className=" p-3 card flex-grow-1">
+              <AgeDistribution />
+            </div>
+            <div className=" p-3 card flex-grow-1">
+              <Source />
+            </div>
+          </div>
+          <div className="d-flex gap-4  flex-grow-1">
+            <div className=" p-3 card flex-grow-1">
+              <EmbryoGrading />
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     </div>

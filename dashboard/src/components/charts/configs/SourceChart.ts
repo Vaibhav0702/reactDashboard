@@ -6,7 +6,7 @@ interface SourceChart {
 }
 
 const SourceChart : SourceChart = {
-  series: [95, 70, 30, 35], // Percentage values for radial bars
+  series: [65, 20, 30, 35], // Percentage values for radial bars
   options: {
     chart: {
       type: 'radialBar',
@@ -16,9 +16,10 @@ const SourceChart : SourceChart = {
       radialBar: {
         hollow: {
           size: '35%', // Adjust the inner radius (hollow center)
+          background : '#F0F0F0'
         },
         track: {
-          background: '#fff', // Track background color
+          background: '#fafafa', // Track background color
           strokeWidth: '100%', // Width of the track (the path behind the bar)
         },
       },

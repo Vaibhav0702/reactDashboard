@@ -4,7 +4,7 @@ const activityChart: { series: Array<{ name: string; data: number[]; color: stri
     series: [
         {
             name: "Sales",
-            data: [450, 200, 100, 220, 500, 100],
+            data: [450, 200, 300, 220, 500, 400],
             color: "#F7F3FF",
         },
     ],

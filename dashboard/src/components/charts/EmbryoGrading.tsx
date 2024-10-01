@@ -3,6 +3,8 @@ import GradingChart from './configs/GradingChart';
 import ReactApexChart from 'react-apexcharts';
 import { Tabs } from 'antd';
 
+import filter from '../../Assets/SVG/filter.svg'
+
 
 interface TabItem {
   key: string;
@@ -26,7 +28,7 @@ export default function EmbryoGrading() {
   const colors = ['#F1EBFF', '#E4D7FF', '#C7B2F2', '#9E7FE1', '#7C67A8'];
 
   return (
-    <div id="chart">
+    <div id="chart" className='flex-grow-1 d-flex flex-column'>
       <div className="chart-container">
         <div className="header-container">
           <div className="flex-item-20">
@@ -46,13 +48,17 @@ export default function EmbryoGrading() {
         </div>
       </div>
 
+       <div className='flex-grow-1'>
+ 
       <ReactApexChart
         className="bar-chart"
         options={GradingChart.options}
         series={GradingChart.series}
-        height={330}
+        height='100%'
         type="bar"
       />
+             
+        </div>
     </div>
   );
 }
