@@ -21,7 +21,7 @@ export default function Layout() {
     const setLoaderfalse = () => {
         setTimeout(() => {
             setLoading(false);
-        }, 1000)
+        }, 2000)
     }
 
 
