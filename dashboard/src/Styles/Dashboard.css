@@ -1,0 +1,339 @@
+.LayoutBackground {
+    background-color: #EFEDF2;
+}
+
+.TitelFont {
+    font-family: 'Poppins';
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.875rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.subTitleFont {
+    font-family: 'Poppins';
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dashBoardIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+    max-width: 2.5rem;
+}
+
+.dashboardSubH {
+    font-family: 'Poppins';
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.3125rem;
+    color: #4A5157;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dashboardH {
+    font-family: 'Poppins';
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card {
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: none !important;
+}
+
+.navLOgo1 {
+    width: 6.25rem;
+}
+
+.vertiBraker {
+    color: #C6CAD1;
+}
+
+
+.navBarContainer {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+
+.text-decoration-none {
+    text-decoration: none;
+}
+
+
+
+.search-container {
+    position: relative;
+}
+
+.search-container input {
+    padding-left: 1.875rem;
+    border: none;
+    width: 18rem;
+    max-width: 18rem;
+}
+
+.search-container::before {
+    content: '';
+    background-image: url('../Assets/SVG/search-normal.svg');
+    background-size: 1rem 1rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0.625rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+}
+
+.patientPara {
+    font-family: 'Poppins';
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.125rem;
+    color: #4A5157;
+}
+
+.customRow td {
+    background-color: #FAFAFA !important;
+    cursor: pointer;
+}
+
+
+.tableTitle {
+    font-family: 'Poppins';
+    font-size: 0.775rem;
+    font-weight: 600;
+    line-height: 1.125rem;
+}
+
+
+.header-name {
+    font-family: 'Poppins';
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+
+
+
+/* ------------- Source Box css--------  */
+.ant-tabs>.ant-tabs-nav .ant-tabs-nav-list {
+    display: flex;
+    justify-content: space-between;
+    width: 100% !important;
+}
+
+.ant-tabs-top > .ant-tabs-nav::before{
+ border-bottom: none !important;
+}
+
+.ant-tabs-tab {
+    padding: 0rem 2.5rem 0rem 2.5rem !important;
+    border-radius: 0.9375rem !important;
+    height: 1.5625rem !important;
+}
+
+.ant-tabs-tab-active {
+    padding: 0rem 2.5rem 0rem 2.5rem !important;
+    border-radius: 0.9375rem !important;
+    background: linear-gradient(96.76deg, #7D54F3 0%, #CEBCFF 100%) !important;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #fff !important;
+    font-family: 'Poppins' !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    line-height: 1.125rem !important;
+    text-align: left !important;
+}
+
+.ant-tabs-ink-bar {
+    background-color: transparent !important;
+}
+
+.ant-tabs-nav {
+    width: 95% !important;
+    padding: 0.25rem !important;
+    background-color: #F9F7FF !important;
+    border-radius: 0.9375rem !important;
+}
+
+.ant-tabs-top {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.ant-tabs-tab-btn {
+    font-family: 'Poppins' !important;
+    font-size: 0.875rem !important;
+    font-weight: 400 !important;
+    line-height: 1.125rem !important;
+    text-align: left !important;
+    color: #4A5157 !important;
+}
+
+.maindiv {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-around !important;
+    margin-top: 1.25rem !important;
+}
+
+.innerdiv {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0.3125rem !important;
+}
+
+.spanmain {
+    width: 0.625rem !important;
+    height: 0.625rem !important;
+    border-radius: 50% !important;
+    margin-right: 0.3125rem !important;
+}
+
+.header-name {
+    padding-left: 1.25rem !important;
+}
+
+.maindiv2 {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    margin-top: 1.25rem !important;
+}
+
+
+/* -----------------------Activity ------------- */
+.activitytext {
+    font-family: Poppins;
+    font-size: 1rem; 
+    font-weight: 500;
+    line-height: 1.5rem; 
+    text-align: left;
+    color: #7B8288;
+}
+
+.weektext {
+    font-family: Poppins;
+    font-size: 1rem; 
+    font-weight: 500;
+    line-height: 1.3125rem; 
+    text-align: left;
+    color: #7D54F3;
+}
+
+.stackedbtn {
+    background: #faf8ff;
+    border-radius: 0.875rem; 
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem; 
+    margin-bottom: 1.25rem; 
+    padding: 0.5rem; 
+    width: 100%;
+    margin-top: 0.125rem; 
+}
+
+.stacked-button.active {
+    background-color: #fff;
+    border: 0.0625rem solid #f2f3f3; 
+    box-shadow: 0.125rem 0.125rem 0.5625rem 0 #0000000d; 
+    color: #000;
+}
+
+button.stacked-button {
+    font-feature-settings: "hlig" off;
+    align-items: center;
+    background-color: initial;
+    border: 0;
+    border-radius: 0.75rem; 
+    box-shadow: 0.125rem 0.125rem 0.5625rem 0 #0000; 
+    color: #4a5157;
+    cursor: pointer;
+    display: flex;
+    font-family: Poppins;
+    font-size: 0.875rem; 
+    font-variant: no-historical-ligatures;
+    font-weight: 500;
+    line-height: 1.3125rem; 
+    padding: 0.5rem 1rem 0.5rem 0.5rem; 
+    text-align: left;
+    width: 100%;
+}
+
+.activeSpan {
+    background: #fff !important;
+}
+
+.chart-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.header-name {
+    margin: 0;
+}
+
+.flex-item-20 {
+    flex: 1 1 20%;
+    min-width: 12.5rem; 
+}
+
+.flex-item-80 {
+    flex: 1 1 80%;
+    min-width: 15.625rem; 
+}
+
+.maindiv2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.625rem; 
+}
+
+.innerdiv {
+    display: flex;
+    align-items: center; 
+}
+
+.spanmain {
+    width: 0.125rem; 
+    height: 0.125rem; 
+    border-radius: 50%;
+    margin-right: 0.3125rem; 
+}
+
+
+  

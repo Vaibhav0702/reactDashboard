@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './Sidebar.css'
+import '../Styles/Sidebar.css'
 import logo from '../Assets/SVG/AINOVA_Logo.svg'; 
 import patientlogo from '../Assets/SVG/patientLogo.svg'; 
 import dashboard from '../Assets/SVG/dashboard.svg'

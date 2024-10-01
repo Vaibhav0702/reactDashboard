@@ -27,6 +27,7 @@
 .normalIcon {
     width: 1.25rem;
     height: 1.25rem; 
+    max-width: 1.25rem;
 }
 
 .thoughPara {
@@ -73,8 +74,13 @@
 }
 
 .customDivs {
-    padding: 0.625rem; 
+    width: 4.125rem; 
+    height: 4.125rem;
     border-radius: 100%;
-    background: #fcd64a47;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: #fcd64a47; */
     backdrop-filter: blur(2.125rem); 
+    background: radial-gradient(circle, #fbeecd 30%, #f8f5f3 70%);
 }

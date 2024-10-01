@@ -10,7 +10,7 @@ import Source from '../components/charts/Source';
 import Activity from '../components/charts/Activity';
 import EmbryoGrading from '../components/charts/EmbryoGrading';
 import AgeDistribution from '../components/charts/AgeDistribution';
-
+import profileUSer from "../Assets/SVG/profile-2user.svg"
 
 interface DashboardCardData {
   title: string;
@@ -24,7 +24,7 @@ const dashboardData: DashboardCardData[] = [
     title: "Total Patients",
     subtitle: "1000",
     value: "1000",
-    icon: embryoBank,
+    icon: profileUSer,
   },
   {
     title: "Total Embryo Graded",
