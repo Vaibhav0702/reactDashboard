@@ -10,7 +10,8 @@ import viewTable from '../Assets/SVG/viewTable.svg';
 import uploadTable from '../Assets/SVG/uploadTable.svg';
 import completedTable from "../Assets/SVG/completedTable.svg";
 import pendingTable from '../Assets/SVG/pendingTable.svg'
-
+import ArrowLeft from '../Assets/SVG/arrow-square-left.svg'
+import ArrowRight from '../Assets/SVG/arrow-square-right.svg'
 
 
 interface DashboardIcons {
@@ -30,6 +31,26 @@ const dashboardIcons: DashboardIcons[] = [
 
 
 export default function Patient() {
+
+
+
+    const handlePageChange = (key : any)=>{
+        console.log(key);
+        
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
     return (
         <div className='d-flex flex-column flex-grow-1' style={{ minHeight: '100%' }}>
             <div className='flex-grow-1 mb-3 card p-2'>
@@ -191,7 +212,27 @@ export default function Patient() {
                     </table>
                 </div>
 
+                <div className='paginationDiv'>
+              <span>Showing 1 to 3 of 10 entries</span>
+              <nav aria-label="Page navigation example">
+                <ul className="pagination justify-content-end">
+                  <li className="page-item disabled">
+                    <button className="page-link" disabled aria-label="Previous">
+                      <img src={ArrowLeft} alt="Previous" />
+                    </button>
+                  </li>
+                  <li className="page-item"><button className="page-link" onClick={() => handlePageChange(1)}>1</button></li>
+                  <li className="page-item"><button className="page-link" onClick={() => handlePageChange(2)}>2</button></li>
+                  <li className="page-item"><button className="page-link" onClick={() => handlePageChange(3)}>3</button></li>
+                  <li className="page-item">
+                    <button className="page-link" onClick={() => handlePageChange('next')} aria-label="Next">
+                      <img src={ArrowRight} alt="Next" />
+                    </button>
+                  </li>
+                </ul>
+              </nav>
 
+            </div>
 
 
             </div>
