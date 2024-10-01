@@ -34,7 +34,7 @@ export default function Layout() {
                         <div className='navBarContainer'>
                             <Navbar />
                         </div>
-                        <Container fluid className="py-3 px-4 flex-grow-1">
+                        <Container fluid className="p-3 flex-grow-1">
                             { isLoading ? <Loader /> : <AllRoutes/> }
                         </Container>
                     </div>

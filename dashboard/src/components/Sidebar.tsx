@@ -44,7 +44,7 @@ export default function Sidebar() {
 
   return (
 
-    <div className="p-3 d-flex flex-column" style={{ width: '20rem', minHeight: '100vh', overflowY: 'auto', minWidth: '20rem' }}>
+    <div className="p-3 d-flex flex-column" style={{ width: '15rem', minHeight: '100vh', overflowY: 'auto', minWidth: '15rem' }}>
       <div className="d-flex justify-content-center align-items-center p-4">
         <img src={`${activeRoute === 'patient' ? patientlogo : logo}`} alt="Logo" style={{ width: '100%' }} />
       </div>
