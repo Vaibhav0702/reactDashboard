@@ -84,3 +84,7 @@
     backdrop-filter: blur(2.125rem); 
     background: radial-gradient(circle, #fbeecd 30%, #f8f5f3 70%);
 }
+
+.pointerClass{
+    cursor: pointer;
+}

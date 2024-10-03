@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import embryoBank from "../Assets/SVG/EmbryoBank.svg"
 
@@ -11,6 +11,7 @@ import Activity from '../components/charts/Activity';
 import EmbryoGrading from '../components/charts/EmbryoGrading';
 import AgeDistribution from '../components/charts/AgeDistribution';
 import profileUSer from "../Assets/SVG/profile-2user.svg"
+import PatientForm from '../components/PatientFrom';
 
 interface DashboardCardData {
   title: string;
@@ -48,6 +49,7 @@ const dashboardData: DashboardCardData[] = [
 
 
 export default function Dashboard() {
+
   return (
     <div className='bg-light px-2 d-flex flex-column h-100'>
 
@@ -212,22 +214,6 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </div>
   )

@@ -29,7 +29,7 @@ export default function Footer() {
             statusTypeObj.map(item => (
               <div className='d-flex align-items-center gap-2'>
                 <div>
-                  <img src={item.src} alt={item.alt} />
+                  <img key={item.alt} src={item.src} alt={item.alt} />
                 </div>
                 <div>
                   {item.msg}
