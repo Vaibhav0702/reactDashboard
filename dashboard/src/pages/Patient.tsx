@@ -152,7 +152,9 @@ export default function Patient() {
             ...patientInfo 
         };
 
-        patientRecord.id = patientData.length;
+        patientRecord.id = patientData.length + 1;
+
+        console.log('Adding patient:', patientRecord);
         patientData.push(patientRecord)
     };
 
