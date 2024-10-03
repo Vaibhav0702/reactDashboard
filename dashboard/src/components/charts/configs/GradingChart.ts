@@ -42,7 +42,7 @@ const GradingChart: GradingChart = {
         chart: {
             type: "bar",
             width: "100%",
-            height: "auto",
+            height: "100%",
             stacked: true,
             toolbar: {
                 show: false,
@@ -54,7 +54,9 @@ const GradingChart: GradingChart = {
                 columnWidth: "30%",
                 borderRadius: 10,
                 // borderRadiusApplication: "end",
-                barHeight: "70%",
+                borderRadiusApplication: "around",
+                borderRadiusWhenStacked: 'all',
+                barHeight: "90%",
             },
         },
         stroke: {
