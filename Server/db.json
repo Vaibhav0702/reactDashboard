@@ -169,57 +169,6 @@
       "reportDataImg": "viewTable",
       "statusImg": "completedTable",
       "isCompleted": true
-    },
-    {
-      "id": 11,
-      "name": "Olivia Martinez",
-      "mrNo": "SDF32165487",
-      "gender": "Female",
-      "accession": "654YZA",
-      "doctor": "James Lewis",
-      "email": "Olivia@mail.com",
-      "phone": "9874561230",
-      "notesImg": "viewTable",
-      "uploadConsentImg": "uploadTable",
-      "stimReportImg": "viewTable",
-      "result": "Pending",
-      "reportDataImg": "viewTable",
-      "statusImg": "pendingTable",
-      "isCompleted": false
-    },
-    {
-      "id": 12,
-      "name": "Ethan Rodriguez",
-      "mrNo": "SDF65432198",
-      "gender": "Male",
-      "accession": "789BCD",
-      "doctor": "Karen Scott",
-      "email": "Ethan@mail.com",
-      "phone": "9564123789",
-      "notesImg": "viewTable",
-      "uploadConsentImg": "uploadTable",
-      "stimReportImg": "viewTable",
-      "result": "Released",
-      "reportDataImg": "viewTable",
-      "statusImg": "completedTable",
-      "isCompleted": true
-    },
-    {
-      "id": 13,
-      "name": "vaibhav",
-      "mrNo": "SDF45678543",
-      "gender": "male",
-      "accession": "123RND",
-      "doctor": "Cody Fisher",
-      "email": "vaibhavginnalwar@gmail.com",
-      "phone": "8857098923",
-      "notesImg": "viewTable",
-      "uploadConsentImg": "uploadTable",
-      "stimReportImg": "viewTable",
-      "result": "Released",
-      "reportDataImg": "viewTable",
-      "statusImg": "completedTable",
-      "isCompleted": true
     }
   ]
 }
