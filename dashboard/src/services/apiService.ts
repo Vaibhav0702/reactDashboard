@@ -13,10 +13,20 @@ const getPatientList = async () => {
 };
 
 
+// add Patient 
+const addNewPatient = async (Patient : PatientInfo ) =>{
+    try {
+        const response = await axios.post("/patientList", Patient);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+}
 
 
 
 
 
 
-export { getPatientList };
+
+export { getPatientList , addNewPatient };
