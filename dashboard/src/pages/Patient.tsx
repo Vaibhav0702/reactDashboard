@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Footer from '../components/Footer'
 
 import addIcon from '../Assets/SVG/addIcon.svg'
@@ -16,6 +16,7 @@ import ArrowRight from '../Assets/SVG/arrow-square-right.svg'
 import { Button, Form, Modal } from 'antd';
 import PatientForm from '../components/PatientFrom';
 import { DashboardIcons, PatientInfo } from '../Types/type';
+import { getPatientList } from '../services/apiService';
 
 const dashboardIcons: DashboardIcons[] = [
     { src: addIcon, alt: 'addIcon' },
@@ -23,206 +24,218 @@ const dashboardIcons: DashboardIcons[] = [
 
 ];
 
-const patientInformation : PatientInfo[]= [
+const patientInformation: PatientInfo[] = [
     {
-        id: 1,
-        name: "Ralph Edwards",
-        mrNo: "SDF45678543",
-        gender: "Female",
-        accession: "123RND",
-        doctor: "Cody Fisher",
-        email: 'Ralph@mail.com',
-        phone: '1252634526',
-        notesImg: viewTable,
-        uploadConsentImg: uploadTable,
-        stimReportImg: viewTable,
-        result: "Released",
-        reportDataImg: viewTable,
-        statusImg: completedTable,
+        "id": 1,
+        "name": "Ralph Edwards",
+        "mrNo": "SDF45678543",
+        "gender": "Female",
+        "accession": "123RND",
+        "doctor": "Cody Fisher",
+        "email": "Ralph@mail.com",
+        "phone": "1252634526",
+        "notesImg": "viewTable",
+        "uploadConsentImg": "uploadTable",
+        "stimReportImg": "viewTable",
+        "result": "Released",
+        "reportDataImg": "viewTable",
+        "statusImg": "completedTable",
+        "isCompleted": true
     },
     {
-        id: 2,
-        name: "John Doe",
-        mrNo: "SDF98765432",
-        gender: "Male",
-        accession: "456ABC",
-        doctor: "Alice Smith",
-        email: 'John@mail.com',
-        phone: '9856242553',
-        notesImg: viewTable,
-        uploadConsentImg: uploadTable,
-        stimReportImg: viewTable,
-        result: "Released",
-        reportDataImg: viewTable,
-        statusImg: pendingTable,
+        "id": 2,
+        "name": "John Doe",
+        "mrNo": "SDF98765432",
+        "gender": "Male",
+        "accession": "456ABC",
+        "doctor": "Alice Smith",
+        "email": "John@mail.com",
+        "phone": "9856242553",
+        "notesImg": "viewTable",
+        "uploadConsentImg": "uploadTable",
+        "stimReportImg": "viewTable",
+        "result": "Released",
+        "reportDataImg": "viewTable",
+        "statusImg": "pendingTable",
+        "isCompleted": false
     },
     {
-        id: 3,
-        name: "Jane Smith",
-        mrNo: "SDF23456789",
-        gender: "Female",
-        accession: "789XYZ",
-        doctor: "Bob Johnson",
-        email: 'Jane@mail.com',
-        phone: '9876543210',
-        notesImg: viewTable,
-        uploadConsentImg: uploadTable,
-        stimReportImg: viewTable,
-        result: "In Progress",
-        reportDataImg: viewTable,
-        statusImg: pendingTable,
+        "id": 3,
+        "name": "Jane Smith",
+        "mrNo": "SDF23456789",
+        "gender": "Female",
+        "accession": "789XYZ",
+        "doctor": "Bob Johnson",
+        "email": "Jane@mail.com",
+        "phone": "9876543210",
+        "notesImg": "viewTable",
+        "uploadConsentImg": "uploadTable",
+        "stimReportImg": "viewTable",
+        "result": "In Progress",
+        "reportDataImg": "viewTable",
+        "statusImg": "pendingTable",
+        "isCompleted": false
     },
     {
-        id: 4,
-        name: "Mark Wilson",
-        mrNo: "SDF12345678",
-        gender: "Male",
-        accession: "567DEF",
-        doctor: "Emily Davis",
-        email: 'Mark@mail.com',
-        phone: '9654321876',
-        notesImg: viewTable,
-        uploadConsentImg: uploadTable,
-        stimReportImg: viewTable,
-        result: "Released",
-        reportDataImg: viewTable,
-        statusImg: completedTable,
+        "id": 4,
+        "name": "Mark Wilson",
+        "mrNo": "SDF12345678",
+        "gender": "Male",
+        "accession": "567DEF",
+        "doctor": "Emily Davis",
+        "email": "Mark@mail.com",
+        "phone": "9654321876",
+        "notesImg": "viewTable",
+        "uploadConsentImg": "uploadTable",
+        "stimReportImg": "viewTable",
+        "result": "Released",
+        "reportDataImg": "viewTable",
+        "statusImg": "completedTable",
+        "isCompleted": true
     },
     {
-        id: 5,
-        name: "Lucy Brown",
-        mrNo: "SDF54321678",
-        gender: "Female",
-        accession: "345GHI",
-        doctor: "Chris Lee",
-        email: 'Lucy@mail.com',
-        phone: '9512634879',
-        notesImg: viewTable,
-        uploadConsentImg: uploadTable,
-        stimReportImg: viewTable,
-        result: "Pending",
-        reportDataImg: viewTable,
-        statusImg: pendingTable,
+        "id": 5,
+        "name": "Lucy Brown",
+        "mrNo": "SDF54321678",
+        "gender": "Female",
+        "accession": "345GHI",
+        "doctor": "Chris Lee",
+        "email": "Lucy@mail.com",
+        "phone": "9512634879",
+        "notesImg": "viewTable",
+        "uploadConsentImg": "uploadTable",
+        "stimReportImg": "viewTable",
+        "result": "Pending",
+        "reportDataImg": "viewTable",
+        "statusImg": "pendingTable",
+        "isCompleted": false
     },
     {
-        id: 6,
-        name: "Robert Johnson",
-        mrNo: "SDF87654321",
-        gender: "Male",
-        accession: "654JKL",
-        doctor: "Anna White",
-        email: 'Robert@mail.com',
-        phone: '9546371825',
-        notesImg: viewTable,
-        uploadConsentImg: uploadTable,
-        stimReportImg: viewTable,
-        result: "Released",
-        reportDataImg: viewTable,
-        statusImg: completedTable,
+        "id": 6,
+        "name": "Robert Johnson",
+        "mrNo": "SDF87654321",
+        "gender": "Male",
+        "accession": "654JKL",
+        "doctor": "Anna White",
+        "email": "Robert@mail.com",
+        "phone": "9546371825",
+        "notesImg": "viewTable",
+        "uploadConsentImg": "uploadTable",
+        "stimReportImg": "viewTable",
+        "result": "Released",
+        "reportDataImg": "viewTable",
+        "statusImg": "completedTable",
+        "isCompleted": true
     },
     {
-        id: 7,
-        name: "Emma Davis",
-        mrNo: "SDF34567890",
-        gender: "Female",
-        accession: "234MNO",
-        doctor: "Paul Green",
-        email: 'Emma@mail.com',
-        phone: '9871234569',
-        notesImg: viewTable,
-        uploadConsentImg: uploadTable,
-        stimReportImg: viewTable,
-        result: "Pending",
-        reportDataImg: viewTable,
-        statusImg: pendingTable,
+        "id": 7,
+        "name": "Emma Davis",
+        "mrNo": "SDF34567890",
+        "gender": "Female",
+        "accession": "234MNO",
+        "doctor": "Paul Green",
+        "email": "Emma@mail.com",
+        "phone": "9871234569",
+        "notesImg": "viewTable",
+        "uploadConsentImg": "uploadTable",
+        "stimReportImg": "viewTable",
+        "result": "Pending",
+        "reportDataImg": "viewTable",
+        "statusImg": "pendingTable",
+        "isCompleted": false
     },
     {
-        id: 8,
-        name: "Michael Brown",
-        mrNo: "SDF09876543",
-        gender: "Male",
-        accession: "789PQR",
-        doctor: "Nancy Adams",
-        email: 'Michael@mail.com',
-        phone: '9845632178',
-        notesImg: viewTable,
-        uploadConsentImg: uploadTable,
-        stimReportImg: viewTable,
-        result: "Released",
-        reportDataImg: viewTable,
-        statusImg: completedTable,
+        "id": 8,
+        "name": "Michael Brown",
+        "mrNo": "SDF09876543",
+        "gender": "Male",
+        "accession": "789PQR",
+        "doctor": "Nancy Adams",
+        "email": "Michael@mail.com",
+        "phone": "9845632178",
+        "notesImg": "viewTable",
+        "uploadConsentImg": "uploadTable",
+        "stimReportImg": "viewTable",
+        "result": "Released",
+        "reportDataImg": "viewTable",
+        "statusImg": "completedTable",
+        "isCompleted": true
     },
     {
-        id: 9,
-        name: "Sophia White",
-        mrNo: "SDF56743210",
-        gender: "Female",
-        accession: "456STU",
-        doctor: "David Parker",
-        email: 'Sophia@mail.com',
-        phone: '9638527410',
-        notesImg: viewTable,
-        uploadConsentImg: uploadTable,
-        stimReportImg: viewTable,
-        result: "In Progress",
-        reportDataImg: viewTable,
-        statusImg: pendingTable,
+        "id": 9,
+        "name": "Sophia White",
+        "mrNo": "SDF56743210",
+        "gender": "Female",
+        "accession": "456STU",
+        "doctor": "David Parker",
+        "email": "Sophia@mail.com",
+        "phone": "9638527410",
+        "notesImg": "viewTable",
+        "uploadConsentImg": "uploadTable",
+        "stimReportImg": "viewTable",
+        "result": "In Progress",
+        "reportDataImg": "viewTable",
+        "statusImg": "pendingTable",
+        "isCompleted": false
     },
     {
-        id: 10,
-        name: "James Miller",
-        mrNo: "SDF23415678",
-        gender: "Male",
-        accession: "123VWX",
-        doctor: "Sarah Clark",
-        email: 'James@mail.com',
-        phone: '9123456789',
-        notesImg: viewTable,
-        uploadConsentImg: uploadTable,
-        stimReportImg: viewTable,
-        result: "Released",
-        reportDataImg: viewTable,
-        statusImg: completedTable,
+        "id": 10,
+        "name": "James Miller",
+        "mrNo": "SDF23415678",
+        "gender": "Male",
+        "accession": "123VWX",
+        "doctor": "Sarah Clark",
+        "email": "James@mail.com",
+        "phone": "9123456789",
+        "notesImg": "viewTable",
+        "uploadConsentImg": "uploadTable",
+        "stimReportImg": "viewTable",
+        "result": "Released",
+        "reportDataImg": "viewTable",
+        "statusImg": "completedTable",
+        "isCompleted": true
     },
     {
-        id: 11,
-        name: "Olivia Martinez",
-        mrNo: "SDF32165487",
-        gender: "Female",
-        accession: "654YZA",
-        doctor: "James Lewis",
-        email: 'Olivia@mail.com',
-        phone: '9874561230',
-        notesImg: viewTable,
-        uploadConsentImg: uploadTable,
-        stimReportImg: viewTable,
-        result: "Pending",
-        reportDataImg: viewTable,
-        statusImg: pendingTable,
+        "id": 11,
+        "name": "Olivia Martinez",
+        "mrNo": "SDF32165487",
+        "gender": "Female",
+        "accession": "654YZA",
+        "doctor": "James Lewis",
+        "email": "Olivia@mail.com",
+        "phone": "9874561230",
+        "notesImg": "viewTable",
+        "uploadConsentImg": "uploadTable",
+        "stimReportImg": "viewTable",
+        "result": "Pending",
+        "reportDataImg": "viewTable",
+        "statusImg": "pendingTable",
+        "isCompleted": false
     },
     {
-        id: 12,
-        name: "Ethan Rodriguez",
-        mrNo: "SDF65432198",
-        gender: "Male",
-        accession: "789BCD",
-        doctor: "Karen Scott",
-        email: 'Ethan@mail.com',
-        phone: '9564123789',
-        notesImg: viewTable,
-        uploadConsentImg: uploadTable,
-        stimReportImg: viewTable,
-        result: "Released",
-        reportDataImg: viewTable,
-        statusImg: completedTable,
-    },
+        "id": 12,
+        "name": "Ethan Rodriguez",
+        "mrNo": "SDF65432198",
+        "gender": "Male",
+        "accession": "789BCD",
+        "doctor": "Karen Scott",
+        "email": "Ethan@mail.com",
+        "phone": "9564123789",
+        "notesImg": "viewTable",
+        "uploadConsentImg": "uploadTable",
+        "stimReportImg": "viewTable",
+        "result": "Released",
+        "reportDataImg": "viewTable",
+        "statusImg": "completedTable",
+        "isCompleted": true
+    }
 ];
 
 
 
 export default function Patient() {
 
-    const [patientData , setPatientData] = useState<any[]>(patientInformation)
+    const [patientData, setPatientData] = useState<PatientInfo[]>([])
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -231,10 +244,27 @@ export default function Patient() {
         age: 0,
         email: '',
         phone: '',
-        gender: '', // Initialize gender
+        gender: '',
     });
 
     const [form] = Form.useForm();
+
+    useEffect(() => {
+        fetchPatients()
+    }, [])
+
+
+
+    const fetchPatients = async () => {
+        try {
+            const patients = await getPatientList();
+            setPatientData(patients);
+        } catch (error) {
+            setPatientData(patientInformation);  // set local patient data
+        }
+    };
+
+
     const handlePageChange = (key: any) => {
         console.log(key);
     }
@@ -242,7 +272,7 @@ export default function Patient() {
     const showModal = (patient?: PatientInfo) => {
         if (patient) {
             setFormData(patient);
-            form.setFieldsValue(patient); 
+            form.setFieldsValue(patient);
         } else {
             setFormData({ name: '', age: 0, email: '', phone: '', gender: '' });
             form.resetFields();
@@ -285,10 +315,10 @@ export default function Patient() {
     const addPatient = async (patientInfo: PatientInfo) => {
         console.log('Adding patient:', patientInfo);
 
-    
-       const patientRecord = {
+
+        const patientRecord = {
             ...patientData[0],
-            ...patientInfo 
+            ...patientInfo
         };
 
         patientRecord.id = patientData.length + 1;
@@ -303,12 +333,12 @@ export default function Patient() {
             if (patient.id === id) {
                 return {
                     ...patient,
-                    ...patientInfo  
+                    ...patientInfo
                 };
             }
             return patient;
         });
-    
+
         console.log('Updated patient data:', updatedPatientData);
         setPatientData(updatedPatientData)
     };
@@ -321,7 +351,7 @@ export default function Patient() {
             const patients: PatientInfo = patient[0];
             return patients;
         }
-    
+
         return formData;
     };
 
@@ -349,7 +379,7 @@ export default function Patient() {
                                             ) : (
                                                 <img className='dashBoardIcon pointerClass' src={icon.src} alt={icon.alt} onClick={async () => {
                                                     if (icon.alt === 'addIcon') {
-                                                        const patient = await loadPatientData(); 
+                                                        const patient = await loadPatientData();
                                                         showModal(patient);
                                                     }
                                                 }} />
@@ -416,7 +446,7 @@ export default function Patient() {
                                 {patientData.map((patient, index) => (
                                     <tr key={index} className='customRow' onClick={async () => {
 
-                                        const patient = await loadPatientData(index + 1); 
+                                        const patient = await loadPatientData(index + 1);
                                         showModal(patient);
 
 
@@ -428,20 +458,36 @@ export default function Patient() {
                                         <td className='tableTitle'>{patient.accession}</td>
                                         <td className='tableTitle'>{patient.doctor}</td>
                                         <td className='p-1'>
-                                            <img src={patient.notesImg} alt="viewTable" />
+                                            {
+                                                patient.notesImg ? <img src={viewTable} alt="viewTable" /> : ''
+                                            }
                                         </td>
                                         <td className='p-1'>
-                                            <img src={patient.uploadConsentImg} alt="uploadTable" />
+                                            {
+                                                patient.uploadConsentImg ? <img src={uploadTable} alt="uploadTable" /> : ''
+                                            }
                                         </td>
                                         <td className='p-1'>
-                                            <img src={patient.stimReportImg} alt="viewTable" />
+
+
+                                            {
+                                                patient.stimReportImg ? <img src={viewTable} alt="viewTable" /> : ''
+                                            }
+
                                         </td>
                                         <td className='tableTitle'>{patient.result}</td>
                                         <td className='p-1'>
-                                            <img src={patient.reportDataImg} alt="viewTable" />
+                                            {
+                                                patient.reportDataImg ? <img src={viewTable} alt="viewTable" /> : ''
+                                            }
+
                                         </td>
                                         <td>
-                                            <img src={patient.statusImg} alt="status" />
+
+                                            {
+                                                patient.isCompleted ? <img src={completedTable} alt="status" /> : <img src={pendingTable} alt="status" />
+                                            }
+
                                         </td>
                                     </tr>
                                 ))}
@@ -473,7 +519,6 @@ export default function Patient() {
                         </nav>
 
                     </div>
-
 
                 </div>
                 <div>

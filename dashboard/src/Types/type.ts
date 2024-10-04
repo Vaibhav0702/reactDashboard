@@ -16,6 +16,7 @@ export interface PatientInfo {
     result?: string,
     reportDataImg?: string,
     statusImg?: string,
+    isCompleted ?: boolean
 }
 
 

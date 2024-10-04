@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="d-flex justify-content-between align-items-center gap-2">
           {
             statusTypeObj.map(item => (
-              <div className='d-flex align-items-center gap-2'>
+              <div className='d-flex align-items-center gap-2' key={item.src}>
                 <div>
                   <img key={item.alt} src={item.src} alt={item.alt} />
                 </div>

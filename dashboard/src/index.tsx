@@ -7,18 +7,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router } from 'react-router-dom'; // Import the BrowserRouter
 import axios from 'axios';
 
-axios.defaults.baseURL = "http://localhost:3000"; // set baseUrl
+axios.defaults.baseURL = "http://localhost:5000"; // set baseUrl
 axios.defaults.headers.post["Content-Type"] = "application/json";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <Router>
     <App />
     </Router>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
