@@ -15,4 +15,12 @@
 
 # Dashboard
 
-![Dashboard](/dashboard/src/Assets/Image/image.png)
+![Dashboard](/dashboard/src/Assets/Image/dashboard.png)
+
+# PatientList
+
+![PatientList](/dashboard/src/Assets/Image/patientlist.png)
+
+# Add / Update Patient Info
+
+![AddUpdatePatientInfo](/dashboard/src/Assets/Image/addupdatePatient.png)
