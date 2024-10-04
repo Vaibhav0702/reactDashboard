@@ -536,7 +536,7 @@ export default function Patient() {
 
                 </div>
                 <div>
-                    <Footer />
+                    <Footer  count={patientData.length}  />
                 </div>
             </div>
 

@@ -89,3 +89,6 @@ export interface SourceChartInfo {
     options: ApexOptions;
 }
   
+export interface patientDateCuntType{
+    count : number
+}
