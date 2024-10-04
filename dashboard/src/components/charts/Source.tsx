@@ -3,18 +3,9 @@ import React, { useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
 import { Tabs } from 'antd';
 import SourceChart from './configs/SourceChart';
+import { SourceTabItem } from '../../Types/type';
 
-
-
-
-
-interface TabItem {
-  key: string;
-  label: string;
-  series : number[]
-}
-
-const items: TabItem[] = [
+const items: SourceTabItem[] = [
   {
     key: '1',
     label: 'Egg',

@@ -3,12 +3,7 @@ import React from 'react'
 import notStarted from '../Assets/SVG/RectangleStatusNotStarted.svg'
 import pending from '../Assets/SVG/RectangleStatusPending.svg'
 import completed from '../Assets/SVG/RectangleStatusComplete.svg'
-interface statusType {
-  src: string;
-  alt: string;
-  msg: string;
-}
-
+import { statusType } from '../Types/type';
 
 const statusTypeObj: statusType[] = [
   { src: notStarted, alt: 'Notstarted', msg: 'Not started' },

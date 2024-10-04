@@ -1,11 +1,7 @@
-import { ApexOptions } from 'apexcharts'; // Import the ApexOptions type
 
-interface SourceChart {
-  series: number[];
-  options: ApexOptions;
-}
+import { SourceChartInfo } from '../../../Types/type';
 
-const SourceChart : SourceChart = {
+const SourceChart : SourceChartInfo = {
   series: [65, 20, 30, 35], // Percentage values for radial bars
   options: {
     chart: {

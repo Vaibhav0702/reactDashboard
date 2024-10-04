@@ -11,13 +11,8 @@ import Support from '../Assets/SVG/headphone.svg'
 import Logout from '../Assets/SVG/logout.svg'
 import lamp from '../Assets/SVG/lamp-on.svg'
 import { Link, useLocation } from 'react-router-dom';
+import { MenuItem } from '../Types/type';
 
-
-interface MenuItem {
-  path: string;
-  label: string;
-  icon: string;
-}
 
 const menuItems: MenuItem[] = [
   { path: '', label: 'Dashboard', icon: dashboard },

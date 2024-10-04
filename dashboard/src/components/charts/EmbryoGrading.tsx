@@ -2,15 +2,9 @@ import React, { useState } from 'react';
 import GradingChart from './configs/GradingChart';
 import ReactApexChart from 'react-apexcharts';
 import { Tabs } from 'antd';
+import { EmbryoGradingTabItem } from '../../Types/type';
 
-import filter from '../../Assets/SVG/filter.svg'
 
-
-interface TabItem {
-  key: string;
-  label: string;
-  series: any[];
-}
 
 export default function EmbryoGrading() {
 
@@ -25,7 +19,7 @@ export default function EmbryoGrading() {
      setcustomSeries(series[0].series)
   };
 
-  const items: TabItem[] = [
+  const items: EmbryoGradingTabItem[] = [
     {
       key: '1',
       label: 'Count',

@@ -1,15 +1,7 @@
-import { ApexOptions } from "apexcharts";
 
-interface GradingChart {
-    series: Array<{
-        name: string;
-        data: number[];
-        color?: string;
-    }>;
-    options: ApexOptions;
-}
+import { GradingChartInfo } from "../../../Types/type";
 
-const GradingChart: GradingChart = {
+const GradingChart: GradingChartInfo = {
     series: [
         {
             name: "Product A",

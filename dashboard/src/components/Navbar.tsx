@@ -11,18 +11,7 @@ import navLOgo4 from '../Assets/SVG/navLogo4.svg';
 import navLOgo5 from '../Assets/SVG/navLogo5.svg';
 import { Link, useLocation } from 'react-router-dom';
 import { title } from 'case';
-
-interface Logo {
-  path?: string;
-  src: string;
-  alt: string;
-}
-
-interface DashboardIcons {
-  src: string;
-  alt: string;
-  path?: string;
-}
+import { DashboardIcons, Logo } from '../Types/type';
 
 const logos: Logo[] = [
   { src: navLOgo1, alt: 'Logo 1' },
@@ -39,7 +28,6 @@ const dashboardIcons: DashboardIcons[] = [
 ];
 
 
-
 export default function Navbar() {
 
   const location = useLocation();
@@ -50,14 +38,6 @@ export default function Navbar() {
   useEffect(() => {
     setActiveRoute(currentPath);
   }, [currentPath]);
-
-
-
-
-
-
-
-
 
 
   return (

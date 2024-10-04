@@ -1,22 +1,8 @@
 import React from 'react';
 import { Form, Input, InputNumber, Select } from 'antd';
+import { PatientFormProps, PatientInfo } from '../Types/type';
 
 const { Option } = Select;
-
-interface PatientInfo {
-  id?: number;
-  name: string;
-  age?: number;
-  email?: string;
-  phone?: string;
-  gender: string;
-}
-
-interface PatientFormProps {
-  form: any;
-  formData: PatientInfo;
-  onFormChange: (data: PatientInfo) => void;
-}
 
 const PatientForm: React.FC<PatientFormProps> = ({ form, formData, onFormChange }) => {
   const handleChange = (changedFields: any) => {
