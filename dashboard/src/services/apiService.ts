@@ -24,9 +24,17 @@ const addNewPatient = async (Patient : PatientInfo ) =>{
 }
 
 
+// update Patient 
+const updateSelectedPatient = async (Patient : PatientInfo ) =>{
+    try {
+        const response = await axios.put(`patientList/${Patient.id}`, Patient);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+}
 
 
 
 
-
-export { getPatientList , addNewPatient };
+export { getPatientList , addNewPatient , updateSelectedPatient };

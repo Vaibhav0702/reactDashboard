@@ -16,7 +16,7 @@ import ArrowRight from '../Assets/SVG/arrow-square-right.svg'
 import { Button, Form, Modal } from 'antd';
 import PatientForm from '../components/PatientFrom';
 import { DashboardIcons, PatientInfo } from '../Types/type';
-import { addNewPatient, getPatientList } from '../services/apiService';
+import { addNewPatient, getPatientList, updateSelectedPatient } from '../services/apiService';
 
 const dashboardIcons: DashboardIcons[] = [
     { src: addIcon, alt: 'addIcon' },
@@ -345,7 +345,16 @@ export default function Patient() {
         });
 
         console.log('Updated patient data:', updatedPatientData);
-        setPatientData(updatedPatientData)
+
+        try {
+            const patients = await updateSelectedPatient(updatedPatientData[id - 1])  // add new patient in db.json
+
+            console.log("........ -----------------", patients)
+
+            // patientData.push(patientRecord)
+        } catch (error) {
+            setPatientData(updatedPatientData)// update patient data locally
+        }
     };
 
     // load patient data
