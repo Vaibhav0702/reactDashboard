@@ -10,3 +10,9 @@
 
 1. cd dashboard
 2. npm start
+
+
+
+# Dashboard
+
+![Dashboard](/dashboard/src/Assets/Image/image.png)
