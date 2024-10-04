@@ -258,7 +258,7 @@ export default function Patient() {
     const fetchPatients = async () => {
         try {
             const patients = await getPatientList();
-            setPatientData(patients);
+            setPatientData(patients); // set patient data from db.json
         } catch (error) {
             setPatientData(patientInformation);  // set local patient data
         }
