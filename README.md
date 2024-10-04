@@ -13,6 +13,10 @@
 
 
 
+# Load Dashboard
+
+![LoadDashboard](/dashboard/src/Assets/Image/loadDashboard.png) 
+
 # Dashboard
 
 ![Dashboard](/dashboard/src/Assets/Image/dashboard.png)
